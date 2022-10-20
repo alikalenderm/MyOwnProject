@@ -1,0 +1,16 @@
+﻿using MyOwnProject.Entities.Concrete;
+using System.Collections.Generic;
+
+namespace MyOwnProject.WebUI.Model
+{
+    public class MyOwnProjectListViewModel
+    {
+        public List<About> Abouts { get; set; }
+        public List<Contact> Contacts { get; set; }
+        public List<Portfolio> Portfolios { get; set; }
+        public List<Experience> Experiences { get; set; }
+        public List<Service> Services { get; set; }
+        public List<SocialMedia> SocialMedias { get; set; }
+        public List<Skill> Skills { get; set; }
+    }
+}
