@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyOwnProject.DataAccess.Concrete.Context;
 
 namespace MyOwnProject.DataAccess.Migrations
 {
     [DbContext(typeof(MyOwnProjectContext))]
-    partial class MyOwnProjectContextModelSnapshot : ModelSnapshot
+    [Migration("20221022115202_mig4")]
+    partial class mig4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -82,13 +84,10 @@ namespace MyOwnProject.DataAccess.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Date")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Subtitle")
+                    b.Property<string>("SubtitleAndDate")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
@@ -97,30 +96,6 @@ namespace MyOwnProject.DataAccess.Migrations
                     b.HasKey("ExperienceId");
 
                     b.ToTable("Experiences");
-                });
-
-            modelBuilder.Entity("MyOwnProject.Entities.Concrete.ExperienceTwo", b =>
-                {
-                    b.Property<int>("ExperienceId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Date")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Subtitle")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ExperienceId");
-
-                    b.ToTable("ExperienceTwos");
                 });
 
             modelBuilder.Entity("MyOwnProject.Entities.Concrete.Portfolio", b =>
@@ -148,10 +123,13 @@ namespace MyOwnProject.DataAccess.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Address")
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SoftwareArea")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ServiceId");

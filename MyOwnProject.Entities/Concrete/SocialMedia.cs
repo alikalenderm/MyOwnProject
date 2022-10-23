@@ -11,5 +11,7 @@ namespace MyOwnProject.Entities.Concrete
         [Key]
         public int SocialMediaId { get; set; }
         public string SocialMediaName { get; set; }
+        public string Address { get; set; }
+        public string Icon { get; set; }
     }
 }

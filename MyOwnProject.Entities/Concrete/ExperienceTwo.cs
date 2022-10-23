@@ -6,12 +6,13 @@ using System.Text;
 
 namespace MyOwnProject.Entities.Concrete
 {
-    public class Skill : IEntity
+    public class ExperienceTwo:IEntity
     {
         [Key]
-        public int SkillId { get; set; }
+        public int ExperienceId { get; set; }
+        public string Title { get; set; }
+        public string Subtitle { get; set; }
+        public string Date { get; set; }
         public string Description { get; set; }
-        public string SkillItem { get; set; }
-        public int SkillItemPercent { get; set; }
     }
 }

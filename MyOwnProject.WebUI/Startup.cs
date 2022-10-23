@@ -40,11 +40,17 @@ namespace MyOwnProject.WebUI
             services.AddSingleton<IExperienceDal, EfExperienceDal>();
             services.AddSingleton<IExperienceService, ExperienceManager>();
 
+            services.AddSingleton<IExperienceTwoDal, EfExperienceTwoDal>();
+            services.AddSingleton<IExperienceTwoService, ExperienceTwoManager>();
+
             services.AddSingleton<IServiceDal, EfServiceDal>();
             services.AddSingleton<IServiceService, ServiceManager>();
 
             services.AddSingleton<ISkillDal, EfSkillDal>();
             services.AddSingleton<ISkillService, SkillManager>();
+
+            services.AddSingleton<ISkillTwoDal, EfSkillTwoDal>();
+            services.AddSingleton<ISkillTwoService, SkillTwoManager>();
 
             services.AddSingleton<ISocialMediaDal, EfSocialMediaDal>();
             services.AddSingleton<ISocialMediaService,SocialMediaManager>();
@@ -74,22 +80,10 @@ namespace MyOwnProject.WebUI
             //U1E_AliK_start
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(name: "admin",
-                           pattern: "admin/{controller=Home}/{action=Index}/{id?}");
-
-                endpoints.MapControllerRoute(name: "Ali",
-                            pattern: "Ali/{*deger}",
-                            defaults: new { controller = "Home", action = "RazorDemo" });
-
                 endpoints.MapControllerRoute(name: "default",
-                            pattern: "{controller=Home}/{action=Index}/{id?}");
+                            pattern: "{controller=MyOwnProject}/{action=Index}/{id?}");
             });
-            //U1E_AliK_end
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapRazorPages();
-            });
+            //U1E_AliK_end;
         }
     }
 }

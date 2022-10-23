@@ -6,7 +6,7 @@ using System.Text;
 
 namespace MyOwnProject.Entities.Concrete
 {
-    public class Skill : IEntity
+    public class SkillTwo : IEntity
     {
         [Key]
         public int SkillId { get; set; }

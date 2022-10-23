@@ -10,8 +10,7 @@ namespace MyOwnProject.Entities.Concrete
     {
         [Key]
         public int ServiceId { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
         public string SoftwareArea { get; set; }
+        public string Address { get; set; }
     }
 }
