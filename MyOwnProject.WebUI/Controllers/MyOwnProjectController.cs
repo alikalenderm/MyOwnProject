@@ -27,6 +27,7 @@ namespace MyOwnProject.WebUI.Controllers
             _socialMediaService = socialMediaService;
             _skillTwoService = skillTwoService;
             _experienceTwoService = experienceTwoService;
+            
         }
 
         public IActionResult Index()
