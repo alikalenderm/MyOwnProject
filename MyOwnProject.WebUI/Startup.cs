@@ -24,7 +24,7 @@ namespace MyOwnProject.WebUI
 
         public IConfiguration Configuration { get; }
 
-        
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
@@ -53,7 +53,7 @@ namespace MyOwnProject.WebUI
             services.AddSingleton<ISkillTwoService, SkillTwoManager>();
 
             services.AddSingleton<ISocialMediaDal, EfSocialMediaDal>();
-            services.AddSingleton<ISocialMediaService,SocialMediaManager>();
+            services.AddSingleton<ISocialMediaService, SocialMediaManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -82,8 +82,18 @@ namespace MyOwnProject.WebUI
             {
                 endpoints.MapControllerRoute(name: "default",
                             pattern: "{controller=MyOwnProject}/{action=Index}/{id?}");
+
             });
-            //U1E_AliK_end;
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+              name: "areas",
+              pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+            );
+
+            });
+            //U1E_AliK_end;      
         }
     }
 }
