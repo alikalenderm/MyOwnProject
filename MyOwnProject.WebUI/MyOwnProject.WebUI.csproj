@@ -40,11 +40,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\admin\.github\workflows\main.yml" />
     <None Include="wwwroot\admin\assets\vendor\gulp-copy\node_modules\arr-diff\index.js" />
     <None Include="wwwroot\admin\assets\vendor\gulp-copy\node_modules\arr-union\index.js" />

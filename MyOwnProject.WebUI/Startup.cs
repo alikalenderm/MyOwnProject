@@ -84,15 +84,6 @@ namespace MyOwnProject.WebUI
                             pattern: "{controller=MyOwnProject}/{action=Index}/{id?}");
 
             });
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-              name: "areas",
-              pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-            );
-
-            });
             //U1E_AliK_end;      
         }
     }
