@@ -77,14 +77,20 @@ namespace MyOwnProject.WebUI
 
             app.UseAuthorization();
 
-            //U1E_AliK_start
+            // KSoft_Ahk_start
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(name: "default",
-                            pattern: "{controller=MyOwnProject}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(name: "areas",
+                             pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
+                endpoints.MapControllerRoute(name: "default",
+                            pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+<<<<<<< HEAD
             //U1E_AliK_end;      
+=======
+            //KSoft_Ahk_end    
+>>>>>>> MyTestBranch
         }
     }
 }

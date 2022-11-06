@@ -10,7 +10,6 @@ namespace MyOwnProject.Entities.Concrete
     {
         [Key]
         public int SkillId { get; set; }
-        public string Description { get; set; }
         public string SkillItem { get; set; }
         public int SkillItemPercent { get; set; }
     }
